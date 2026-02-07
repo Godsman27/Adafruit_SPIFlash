@@ -76,11 +76,11 @@ bool Adafruit_SPIFlashBase::begin(SPIFlash_Device_t const *flash_devs,
 
   _trans->begin();
 
-// #if defined(ARDUINO_ARCH_ESP32)
-//   _flash_dev = ((Adafruit_FlashTransport_ESP32 *)_trans)->getFlashDevice();
+#if defined(ARDUINO_ARCH_ESP32)
+  _flash_dev = ((Adafruit_FlashTransport_ESP32 *)_trans)->getFlashDevice();
 // #elif defined(ARDUINO_ARCH_RP2040)
 //   _flash_dev = ((Adafruit_FlashTransport_RP2040 *)_trans)->getFlashDevice();
-// #endif
+#endif
 
   return true;
 }
